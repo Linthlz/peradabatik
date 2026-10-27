@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #fef3e2;
+  --color-ivory-deep: #f7e6c9;
+  --color-amber: #f4ae52;
+  --color-terracotta: #d4621a;
+  /* Teks ivory di atas #D4621A hanya 3,4:1; tombol memakai turunan yang lebih gelap agar lolos WCAG AA (4,8:1). */
+  --color-terracotta-deep: #b04e16;
+  --color-terracotta-dark: #8e3d10;
+  --color-espresso: #2a1a0e;
+  --color-espresso-soft: #5a4636;
+  --color-line: #e5d2b4;
+
+  /* grotesk ringan untuk judul dan teks (padanan gratis Basis Grotesque) */
+  --font-display: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    /* scrollbar disembunyikan; halaman tetap bisa digulir (roda, keyboard, sentuh) dan ada garis progres di atas */
+    scrollbar-width: none;
+  }
+  html::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    @apply bg-ivory text-espresso font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-terracotta);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: var(--color-amber);
+    color: var(--color-espresso);
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 45s linear infinite;
+}
+
+@utility animate-marquee-reverse {
+  animation: marquee 50s linear infinite reverse;
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10;
+}
+
+@utility eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.22em] text-terracotta-deep;
+}
+
+@utility btn {
+  @apply inline-flex min-h-11 items-center justify-center gap-2 px-6 py-3 text-sm font-semibold tracking-wide transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+@utility btn-primary {
+  @apply btn bg-terracotta-deep text-ivory hover:bg-terracotta-dark active:bg-espresso;
+}
+
+@utility btn-outline {
+  @apply btn border border-espresso text-espresso hover:bg-espresso hover:text-ivory active:bg-espresso-soft;
+}
+
+@utility btn-outline-light {
+  @apply btn border border-ivory/70 text-ivory hover:bg-ivory hover:text-espresso;
+}
+
+@utility link-underline {
+  @apply inline-flex items-center gap-2 border-b border-terracotta pb-1 text-sm font-semibold text-terracotta-deep transition-colors hover:border-espresso hover:text-espresso;
+}
+
+@utility input {
+  @apply w-full border border-line bg-white/60 px-4 py-3 text-sm text-espresso placeholder:text-espresso-soft/60 focus:border-terracotta focus:outline-none;
+}
