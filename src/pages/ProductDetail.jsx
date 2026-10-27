@@ -184,7 +184,7 @@ function Detail({ p }) {
         <div>
           <p className="eyebrow">{typeLabel(p.type, lang)} · Motif {motif.name}</p>
           <h1 className="mt-3 text-4xl font-light leading-tight sm:text-5xl">{name}</h1>
-          {p.label && <span className="mt-4 inline-block bg-amber px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em]">{term(p.label, lang)}</span>}
+          {p.label && <span className="mt-4 inline-block bg-amber px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.16em]">{term(p.label, lang)}</span>}
           <p className="mt-5 text-2xl font-medium">{formatRupiah(p.price)}</p>
           <Ornament className="mt-6 text-amber" />
           <p className="mt-6 leading-relaxed text-espresso-soft">{loc(p, 'description')}</p>

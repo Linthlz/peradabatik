@@ -50,7 +50,7 @@ export default function Cart() {
                     <div className="flex min-w-0 flex-1 flex-col">
                       <div className="flex items-start justify-between gap-3">
                         <div className="min-w-0">
-                          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-espresso-soft">{typeLabel(p.type, lang)}</p>
+                          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-espresso-soft">{typeLabel(p.type, lang)}</p>
                           <Link to={`/koleksi/${p.slug}`} className="mt-1 block font-display text-xl font-normal leading-snug hover:text-terracotta-deep sm:text-2xl">
                             {loc(p, 'name')}
                           </Link>
@@ -62,16 +62,16 @@ export default function Cart() {
                         </button>
                       </div>
                       <div className="mt-auto flex flex-wrap items-end justify-between gap-3 pt-4">
-                        <div className="flex h-10 items-center border border-line" role="group" aria-label={t(`Jumlah ${p.name}`, `Quantity of ${loc(p, 'name')}`)}>
-                          <button type="button" className="flex h-full w-10 items-center justify-center disabled:opacity-40" onClick={() => setQty(l.slug, l.size, l.qty - 1)} disabled={l.qty <= 1} aria-label={t('Kurangi jumlah', 'Decrease quantity')}>
+                        <div className="flex h-11 items-center border border-line" role="group" aria-label={t(`Jumlah ${p.name}`, `Quantity of ${loc(p, 'name')}`)}>
+                          <button type="button" className="flex h-full w-11 items-center justify-center disabled:opacity-40" onClick={() => setQty(l.slug, l.size, l.qty - 1)} disabled={l.qty <= 1} aria-label={t('Kurangi jumlah', 'Decrease quantity')}>
                             <Minus className="h-3.5 w-3.5" aria-hidden="true" />
                           </button>
                           <span className="w-8 text-center text-sm tabular-nums">{l.qty}</span>
-                          <button type="button" className="flex h-full w-10 items-center justify-center disabled:opacity-40" onClick={() => setQty(l.slug, l.size, l.qty + 1)} disabled={l.qty >= p.stock} aria-label={t('Tambah jumlah', 'Increase quantity')}>
+                          <button type="button" className="flex h-full w-11 items-center justify-center disabled:opacity-40" onClick={() => setQty(l.slug, l.size, l.qty + 1)} disabled={l.qty >= p.stock} aria-label={t('Tambah jumlah', 'Increase quantity')}>
                             <Plus className="h-3.5 w-3.5" aria-hidden="true" />
                           </button>
                         </div>
-                        <div className="text-right">
+                        <div className="ml-auto text-right">
                           <p className="text-xs text-espresso-soft">{formatRupiah(p.price)} / pcs</p>
                           <p className="font-medium">{formatRupiah(p.price * l.qty)}</p>
                         </div>

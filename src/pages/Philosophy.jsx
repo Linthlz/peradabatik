@@ -39,7 +39,7 @@ function MotifExhibit({ motif: m, index }) {
             <ul className="mt-2 flex flex-wrap gap-2">
               {related.map((p) => (
                 <li key={p.slug}>
-                  <Link to={`/koleksi/${p.slug}`} className="inline-flex min-h-10 items-center border border-line px-3 text-sm hover:border-terracotta hover:text-terracotta-deep">
+                  <Link to={`/koleksi/${p.slug}`} className="inline-flex min-h-11 items-center border border-line px-3 text-sm hover:border-terracotta hover:text-terracotta-deep">
                     {loc(p, 'name')}
                   </Link>
                 </li>

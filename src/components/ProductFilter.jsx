@@ -61,7 +61,7 @@ export default function ProductFilter({ values, onChange, onReset, resultCount }
           )}
           <label className="flex items-center gap-2 text-sm">
             <span className="text-espresso-soft">{t('Urutkan', 'Sort by')}</span>
-            <select value={values.urut} onChange={(e) => onChange('urut', e.target.value)} className="input w-auto py-2">
+            <select value={values.urut} onChange={(e) => onChange('urut', e.target.value)} className="input w-auto min-h-11 py-2">
               {sorts.map((s) => (
                 <option key={s.id} value={s.id}>{t(s.label, s.en)}</option>
               ))}

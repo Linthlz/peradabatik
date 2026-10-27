@@ -125,7 +125,7 @@ export default function Navbar() {
                 </span>
               )}
             </Link>
-            <LangSwitch className="ml-1" />
+            <LangSwitch className="ml-1 hidden sm:flex" />
             <NavLink
               to="/kontak"
               className={`ml-3 hidden items-center gap-2 border px-4 py-2 text-sm tracking-wide transition-colors lg:inline-flex ${

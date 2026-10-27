@@ -11,7 +11,7 @@ export default function Breadcrumb({ items, className = '', light = false }) {
           <li key={it.label} className="flex items-center gap-1.5">
             {i > 0 && <ChevronRight className="h-3 w-3" aria-hidden="true" />}
             {it.to && i < all.length - 1 ? (
-              <Link to={it.to} className={light ? 'hover:text-amber' : 'hover:text-terracotta-deep'}>{it.label}</Link>
+              <Link to={it.to} className={`tap-area ${light ? 'hover:text-amber' : 'hover:text-terracotta-deep'}`}>{it.label}</Link>
             ) : (
               <span aria-current="page" className={light ? 'text-ivory' : 'text-espresso'}>{it.label}</span>
             )}

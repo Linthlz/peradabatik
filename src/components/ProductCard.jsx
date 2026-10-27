@@ -18,12 +18,12 @@ export default function ProductCard({ product: p }) {
             className="transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
           />
           <div className="absolute top-3 left-3 flex flex-col items-start gap-2">
-            {p.label && <span className="bg-amber px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-espresso">{term(p.label, lang)}</span>}
-            {soldOut && <span className="bg-espresso px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-ivory">{t('Stok Habis', 'Sold Out')}</span>}
+            {p.label && <span className="bg-amber px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-espresso">{term(p.label, lang)}</span>}
+            {soldOut && <span className="bg-espresso px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-ivory">{t('Stok Habis', 'Sold Out')}</span>}
           </div>
         </div>
         <div className="flex flex-1 flex-col pt-4">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-espresso-soft">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-espresso-soft">
             {typeLabel(p.type, lang)} · {t('Motif', 'Motif')} {getMotif(p.motif)?.name}
           </p>
           <h3 className="mt-1.5 text-2xl font-normal leading-snug transition-colors group-hover:text-terracotta-deep">{loc(p, 'name')}</h3>

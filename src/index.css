@@ -80,8 +80,18 @@
   @apply btn border border-ivory/70 text-ivory hover:bg-ivory hover:text-espresso;
 }
 
+/* Memperluas area sentuh link teks hingga ±44px tanpa mengubah tampilan atau tata letak. */
+@utility tap-area {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -12px -4px;
+  }
+}
+
 @utility link-underline {
-  @apply inline-flex items-center gap-2 border-b border-terracotta pb-1 text-sm font-semibold text-terracotta-deep transition-colors hover:border-espresso hover:text-espresso;
+  @apply tap-area inline-flex items-center gap-2 border-b border-terracotta pb-1 text-sm font-semibold text-terracotta-deep transition-colors hover:border-espresso hover:text-espresso;
 }
 
 @utility input {

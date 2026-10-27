@@ -19,7 +19,7 @@ export default function LangSwitch({ className = '' }) {
             onClick={() => setLang(code)}
             aria-pressed={lang === code}
             aria-label={name}
-            className={`flex h-11 min-w-8 items-center justify-center px-1 uppercase transition-opacity ${
+            className={`flex h-11 min-w-11 items-center justify-center px-1 uppercase transition-opacity ${
               lang === code ? 'font-semibold' : 'opacity-55 hover:opacity-100'
             }`}
           >

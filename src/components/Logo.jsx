@@ -11,7 +11,7 @@ export const navLinks = [
 export default function Logo({ light = false }) {
   return (
     <Link to="/" className={`flex flex-col leading-none ${light ? 'text-ivory' : 'text-espresso'}`} aria-label="Perada Batik — Home">
-      <span className="font-display text-xl font-light tracking-[0.42em] sm:text-[1.35rem]">PERADA</span>
+      <span className="font-display text-lg font-light tracking-[0.34em] sm:text-[1.35rem] sm:tracking-[0.42em]">PERADA</span>
       <span className={`mt-1.5 text-[9px] font-medium tracking-[0.62em] ${light ? 'text-amber' : 'text-terracotta-deep'}`}>BATIK</span>
     </Link>
   )

@@ -112,7 +112,7 @@ function Hero() {
           <ul className="flex gap-3" aria-label={t('Pilih foto latar', 'Choose background photo')}>
             {slides.map(([sid], i) => (
               <li key={sid}>
-                <button type="button" onClick={() => setActive(i)} aria-label={`${t('Foto', 'Photo')} ${i + 1}: ${loc(photos[sid], 'alt')}`} aria-pressed={active === i} className="group block py-3">
+                <button type="button" onClick={() => setActive(i)} aria-label={`${t('Foto', 'Photo')} ${i + 1}: ${loc(photos[sid], 'alt')}`} aria-pressed={active === i} className="group flex h-11 items-center">
                   <span className="block h-0.5 w-10 overflow-hidden bg-ivory/30 sm:w-14">
                     {active === i && (
                       <motion.span
@@ -141,7 +141,7 @@ function Tile({ to, photo, label, sub, className = '', position, delay }) {
         <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/10 to-transparent transition-opacity duration-500 group-hover:from-espresso/90" />
         <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6 text-ivory sm:p-8">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-amber">{sub}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber">{sub}</p>
             <p className="mt-2 font-display text-4xl font-light sm:text-5xl">{label}</p>
           </div>
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-ivory/50 transition-all duration-500 group-hover:rotate-45 group-hover:border-amber group-hover:bg-amber group-hover:text-espresso">
@@ -173,7 +173,7 @@ function BrandIntro() {
   return (
     <section ref={ref} className="border-y border-line bg-ivory-deep/50 py-20 sm:py-28">
       <div className="container-page grid items-center gap-14 lg:grid-cols-12">
-        <div className="relative lg:col-span-6">
+        <div className="relative mb-10 lg:col-span-6 lg:mb-0">
           <ImageReveal className="aspect-[4/5] w-[72%]">
             <Photo id="potret-kain-sunda" position="50% 35%" />
           </ImageReveal>

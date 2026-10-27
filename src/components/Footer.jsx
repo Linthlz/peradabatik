@@ -31,10 +31,10 @@ export default function Footer() {
 
         <div className="md:col-span-3">
           <h2 className="text-xs font-medium uppercase tracking-[0.22em] text-espresso-soft">{t('Navigasi', 'Navigation')}</h2>
-          <ul className="mt-5 space-y-3">
+          <ul className="mt-3">
             {navLinks.map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="text-espresso/85 transition-colors hover:text-terracotta-deep">{t(l.label, l.en)}</Link>
+                <Link to={l.to} className="inline-flex min-h-11 items-center text-espresso/85 transition-colors hover:text-terracotta-deep">{t(l.label, l.en)}</Link>
               </li>
             ))}
           </ul>
@@ -66,7 +66,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} {business.name}. {t('Hak cipta dilindungi.', 'All rights reserved.')}</p>
           {credited.length > 0 && (
             <details className="mt-2 text-xs">
-              <summary className="cursor-pointer hover:text-terracotta-deep">{t('Kredit foto', 'Photo credits')} ({credited.length})</summary>
+              <summary className="cursor-pointer py-3 hover:text-terracotta-deep">{t('Kredit foto', 'Photo credits')} ({credited.length})</summary>
               <ul className="mt-3 grid gap-x-6 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
                 {credited.map((p) => (
                   <li key={p.id}>
@@ -78,9 +78,9 @@ export default function Footer() {
             </details>
           )}
         </div>
-        <div className="flex shrink-0 items-center gap-6">
-          <Link to="/kontak" className="hover:text-terracotta-deep">{t('Hubungi Kami', 'Contact Us')}</Link>
-          <Link to="/koleksi" className="group inline-flex items-center gap-1.5 text-espresso hover:text-terracotta-deep">
+        <div className="flex shrink-0 flex-wrap items-center gap-x-6">
+          <Link to="/kontak" className="inline-flex min-h-11 items-center hover:text-terracotta-deep">{t('Hubungi Kami', 'Contact Us')}</Link>
+          <Link to="/koleksi" className="group inline-flex min-h-11 items-center gap-1.5 text-espresso hover:text-terracotta-deep">
             {t('Lihat Koleksi', 'View Collection')} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
           </Link>
         </div>
